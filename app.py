@@ -9,6 +9,7 @@ import os
 
 app = Flask(__name__)
 app.debug = True
+app.secret_key=os.environ['KEY']
 app.config['MYSQL_HOST'] = os.environ['HOST']
 app.config['MYSQL_USER'] = os.environ['USER']
 app.config['MYSQL_PASSWORD'] = os.environ['PASS']
@@ -275,5 +276,4 @@ def deletwo(id_data):
 
 
 if __name__ == "__main__":
-    app.secret_key=os.environ['KEY']
     app.run()
