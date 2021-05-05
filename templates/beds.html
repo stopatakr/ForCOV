@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <h2>Bed Details</h2>
+
+            <table class="table table-striped">
+                
+                <tr>
+                    <th>Unique ID</th>
+                    <th>Hospital Name</th>
+                    <th>Contact No.</th>
+                    <th>Email</th>
+                    <th>Beds</th>
+
+
+                </tr>
+                
+                    {% for row in beds %}
+                    <tr>
+                        <td>{{row["id"]}}</td>
+                        <td>{{row["name"]}}</td>
+                        <td>{{row["contact"]}}</td>
+                        <td>{{row["email"]}}</td>
+                        <td>{{row["beds"]}}</td>
+
+
+                    </tr>
+                    {% endfor %}
+                 </table>
+               
+        </div>
+    </div>
+</div>
+
+{% endblock %}

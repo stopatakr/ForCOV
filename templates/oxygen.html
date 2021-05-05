@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block head %}
+
+{{ super() }}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <h2>Oxygen Details</h2>
+
+            <table class="table table-striped">
+                
+                <tr>
+                    <th>Unique ID</th>
+                    <th>Name</th>
+                    <th>Contact No.</th>
+                    <th>Email</th>
+                    <th>Place</th>
+
+
+                </tr>
+                
+                    {% for row in oxygen %}
+                    <tr>
+                        <td>{{row["id"]}}</td>
+                        <td>{{row["name"]}}</td>
+                        <td>{{row["contact"]}}</td>
+                        <td>{{row["email"]}}</td>
+                        <td>{{row["place"]}}</td>
+
+
+                    </tr>
+                    {% endfor %}
+                 </table>
+               
+        </div>
+    </div>
+</div>
+{% endblock %}
